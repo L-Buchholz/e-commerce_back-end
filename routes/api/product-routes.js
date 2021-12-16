@@ -45,18 +45,19 @@ Use your model's column definitions to figure out what req.body 
 will be for POST and PUT routes! 
 */
 router.post("/", (req, res) => {
-  Product.create(
+  return Product.create(
     // (Updated code)
     {
       product_name: req.body.product_name,
       price: req.body.price,
       stock: req.body.stock,
+      // Don't need to add tagIds as a line due to ? in "if" statement
     }
     // (Updated code ends here)
   )
     .then((product) => {
       // If product tags are present: We need to create pairings to bulk create in the ProductTag model
-      if (req.body.tagIds.length) {
+      if (req.body.tagIds?.length) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
           return {
             product_id: product.id,

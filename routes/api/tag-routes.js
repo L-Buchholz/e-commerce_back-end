@@ -49,13 +49,14 @@ router.post("/", (req, res) => {
     // (Updated code)
     {
       tag_name: req.body.tag_name,
+      // Don't need to add productIds as a line due to ? in "if" statement
     }
     // (Updated code ends here)
   )
     // (Imported/modified product-routes code begins here)
     .then((tag) => {
       // If multiple producs are associated with this tag: We need to create pairings to bulk create in the ProductTag model
-      if (req.body.productIds.length) {
+      if (req.body.productIds?.length) {
         const productTagIdArr = req.body.productIds.map((product_id) => {
           return {
             tag_id: tag.id,
