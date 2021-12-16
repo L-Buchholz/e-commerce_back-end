@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const { Tag, Product, ProductTag } = require("../../models");
-// UPDATED CODE: Added { restore } const to this file (on product-routes.js and category-routes.js)
-const { restore } = require("../../models/Tags");
 
 // The `/api/tags` endpoint
 
