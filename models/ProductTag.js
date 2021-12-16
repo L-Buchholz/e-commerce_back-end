@@ -6,9 +6,6 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    /*
-    // These columns are not required for the database to work properly, so they are commented out
-    // ProductTag contains an empty object in order to run properly as a function
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,7 +26,6 @@ ProductTag.init(
         key: "id",
       },
     },
-     */
   },
   {
     sequelize,
