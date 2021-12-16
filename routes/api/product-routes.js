@@ -127,7 +127,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// DELETE a category using its ID value
+// DELETE a product using its ID value
 router.delete("/:id", async (req, res) => {
   // (Updated code)
   try {
