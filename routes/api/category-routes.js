@@ -1,28 +1,76 @@
-const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const router = require("express").Router();
+const { Category, Product } = require("../../models");
 
 // The `/api/categories` endpoint
 
-router.get('/', (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
+// GET all categories, inc. associated Products
+router.get("/", async (req, res) => {
+  // (Updated code)
+  try {
+    const categoryData = await Category.findAll({
+      // Add Product as a second model to JOIN with
+      include: [{ model: Product }],
+    });
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  // (Updated code ends here)
 });
 
-router.get('/:id', (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+// GET a single category, inc. associated Product[s]
+router.get("/:id", async (req, res) => {
+  // (Updated code)
+  try {
+    const categoryData = await Category.findByPk(req.params.id, {
+      include: [{ model: Product }],
+    });
+
+    if (!categoryData) {
+      res.status(404).json({ message: "No category found with that ID" });
+      return;
+    }
+
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  // (Updated code ends here)
 });
 
-router.post('/', (req, res) => {
-  // create a new category
+// CREATE a new category
+/*
+Use your model's column definitions to figure out what req.body 
+will be for POST and PUT routes!
+*/
+router.post("/", async (req, res) => {
+  // (Updated code)
+  try {
+    const categoryData = await Category.create(req.body);
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+  // (Updated code ends here)
 });
 
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
+//
+//
+
+// UPDATE a category using its ID value
+/* 
+Use your model's column definitions to figure out what req.body 
+will be for POST and PUT routes! 
+*/
+router.put("/:id", async (req, res) => {
+  // (Updated code)
+  // (Updated code ends here)
 });
 
-router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
+// DELETE a category using its ID value
+router.delete("/:id", (req, res) => {
+  // (Updated code)
+  // (Updated code ends here)
 });
 
 module.exports = router;
