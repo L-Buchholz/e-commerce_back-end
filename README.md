@@ -22,4 +22,8 @@ The following is a screenshot of the Insomnia interface, highlighting the back-e
 
 ## UPDATE -- Link to video walk-through:
 
-As the e-commerce back-end application cannot be deployed at a live URL, a video highlighting a walk-through of using this application is included here: [LINK]
+As the e-commerce back-end application cannot be deployed at a live URL, videos highlighting a walk-through of using this application are included here: 
+
+* https://drive.google.com/file/d/1B0Ep1Vsy5LwcEhpVTyHK5xK8VmmNS23e/view?usp=sharing
+* https://drive.google.com/file/d/1uXaQauV8kuYhe03qx3jtr3_zb3OC1iNu/view?usp=sharing
+* https://drive.google.com/file/d/1ID_snAXK1WlvKnNaDvHF8fH4STwbkgdo/view?usp=sharing
