@@ -20,7 +20,7 @@ The following is a screenshot of the Insomnia interface, highlighting the back-e
 
 ![Insomnia app view of the e-commerce back-end. This image includes: A left-hand column where a user has added a "Test product" with two tagIds, and a right-hand column showing the newly-updated product database including seed data](./screenshot.png)
 
-## UPDATE -- Link to video walk-through:
+## Link to video walk-through:
 
 As the e-commerce back-end application cannot be deployed at a live URL, videos highlighting a walk-through of using this application are included here: 
 
